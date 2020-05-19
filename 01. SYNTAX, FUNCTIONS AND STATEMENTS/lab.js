@@ -143,7 +143,7 @@ aggregateElements([2, 4, 8, 16])*/
 
 //EXCERCISE 9
 
-function wordsUppercase(input) {
+/*function wordsUppercase(input) {
     let reg = /\W/
     let ads = input.split(reg)
     .filter(a => {
@@ -158,4 +158,4 @@ function wordsUppercase(input) {
     
 }
 
-wordsUppercase('Hi, how are you?')
+wordsUppercase('Hi, how are you?')*/
