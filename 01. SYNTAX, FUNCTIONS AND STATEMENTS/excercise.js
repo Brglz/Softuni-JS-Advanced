@@ -63,7 +63,7 @@ sameNumbers(2222222);*/
 //     let time = distance/speed
 //     let resting = Math.floor(distance/0.5);
 //     console.log(resting);
-    
+
 // }
 
 // timeToWalk(4000, 0.60, 5)
@@ -72,7 +72,45 @@ sameNumbers(2222222);*/
 //EXCERCISE 5
 
 function roadRadar(input) {
-    
+    let [speed, area] = input;
+    switch (area) {
+        case 'motorway':
+            if(speed>130 && speed<=150){
+                console.log('speeding');
+            } else if(speed>150 && speed<=190){
+                console.log('excessive speeding');
+            } else if(speed>190){
+                console.log('reckless driving');
+            }
+            break;
+        case 'interstate':
+            if(speed>90 && speed<=110){
+                console.log('speeding');
+            } else if(speed>110 && speed<=150){
+                console.log('excessive speeding');
+            } else if(speed>150){
+                console.log('reckless driving');
+            }
+            break;
+        case 'city':
+            if(speed>50 && speed<=70){
+                console.log('speeding');
+            } else if(speed>70 && speed<=110){
+                console.log('excessive speeding');
+            } else if(speed>110){
+                console.log('reckless driving');
+            }
+            break;
+        case 'residential':
+            if(speed>20 && speed<=40){
+                console.log('speeding');
+            } else if(speed>40 && speed<=80){
+                console.log('excessive speeding');
+            } else {
+                console.log('reckless driving');
+            }
+            break;
+    }
 }
 
-roadRadar([40, 'city'])
+roadRadar([21, 'residential'])
