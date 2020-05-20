@@ -78,6 +78,15 @@ sameNumbers(2222222);*/
         }
     }
 
+    // DIFERENT WAYS TO ADD THE 0 IF THE NUMBER IS 1 DECIMEL;
+    // function pad(num) {
+    //    return ('0' + num).slice(-2);
+    // }
+
+    // function pad(num) {
+    //     return num = num.toString().padStart(2,'0')
+    // }
+
 }
 
 timeToWalk(4000, 0.60, 5)
