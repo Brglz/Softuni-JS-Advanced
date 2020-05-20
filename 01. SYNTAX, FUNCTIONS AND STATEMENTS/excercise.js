@@ -71,7 +71,7 @@ sameNumbers(2222222);*/
 
 //EXCERCISE 5
 
-function roadRadar(input) {
+/*function roadRadar(input) {
     let [speed, area] = input;
     switch (area) {
         case 'motorway':
@@ -113,4 +113,40 @@ function roadRadar(input) {
     }
 }
 
-roadRadar([21, 'residential'])
+roadRadar([21, 'residential'])*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 6
+
+/*function cookingByNumbers(input) {
+    let number = input.shift();
+    for (const command of input) {
+        switch (command) {
+            case 'chop':
+                number /= 2;
+                console.log(number);
+                break;
+            case 'dice':
+                number = Math.sqrt(number);
+                console.log(number);
+                break;
+            case 'spice':
+                number++;
+                console.log(number);
+                break;
+            case 'bake':
+                number *= 3;
+                console.log(number);
+                break;
+            case 'fillet':
+                number -= number * 0.2;
+                console.log(number);
+                break;
+        }
+    }
+}
+
+cookingByNumbers(['9', 'dice', 'spice', 'chop', 'bake', 'fillet'])*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 7
