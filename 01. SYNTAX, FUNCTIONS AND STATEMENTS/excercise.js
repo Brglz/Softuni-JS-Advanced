@@ -150,3 +150,34 @@ cookingByNumbers(['9', 'dice', 'spice', 'chop', 'bake', 'fillet'])*/
 //-------------------------------------------------------------------------------------------------------------------------
 
 //EXCERCISE 7
+
+// function validityCheker(input) {
+//     let [x1,y1,x2,y2] = input;
+
+// }
+
+// validityCheker([3, 0, 0, 4])
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 9
+
+/*function calorieObject(input) {
+    let obj = {};
+    let products = [];
+    let callories = [];
+
+    for (let i = 0; i < input.length; i++) {
+        if(i%2===0) {
+            products.push(input[i])
+        } else {
+            callories.push(+input[i])
+        }
+    }
+    for (let i = 0; i< products.length;i++) {
+        obj[products[i]] = callories[i];
+    }
+   console.log(obj);
+   
+}
+
+calorieObject(['Yoghurt', '48', 'Rise', '138', 'Apple', '52'])*/
