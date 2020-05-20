@@ -58,15 +58,30 @@ sameNumbers(2222222);*/
 
 //EXCERCISE 4
 
-// function timeToWalk(steps,lengthOfFootprint, speed) {
-//     let distance = (steps*lengthOfFootprint)/1000; // in km
-//     let time = distance/speed
-//     let resting = Math.floor(distance/0.5);
-//     console.log(resting);
+/*function timeToWalk(steps,lengthOfFootprint, speed) {
+    const distance = steps*lengthOfFootprint; // in km
+    let time = Math.round(distance/speed * 3.6);
+    time += Math.floor(distance/500) * 60;
 
-// }
+    const secconds = time % 60;
+    time -= secconds;
+    const minutes = (time / 60) % 60
+    time -= minutes;
+    const hours = Math.floor(time / 3600);
+    console.log(`${pad(hours)}:${pad(minutes)}:${pad(secconds)}`);
+    
+    function pad(num) {
+        if(num<10){
+            return '0' + num;
+        } else {
+            return '' + num
+        }
+    }
 
-// timeToWalk(4000, 0.60, 5)
+}
+
+timeToWalk(4000, 0.60, 5)
+timeToWalk(2564, 0.70, 5.5)*/
 //-------------------------------------------------------------------------------------------------------------------------
 
 //EXCERCISE 5
