@@ -76,6 +76,22 @@ negativeOrPossitiveNumbers(['asdsad',2,'3',-1,-0])*/
 lastKNumberSequence(6,3)*/
 //-------------------------------------------------------------------------------------------------------------------------
 
+//EXCERCISE 5
+
+/*function processOddNumbers(input) {
+    let result = [];
+    for (let i = 0; i < input.length; i++) {
+        if(i%2!==0){
+            let curr = input[i]*2;
+            result.unshift(curr)
+        }
+    }
+    console.log(result.join(' '));
+}
+
+processOddNumbers([3, 0, 10, 4, 7, 3])*/
+//-------------------------------------------------------------------------------------------------------------------------
+
 //EXCERCISE 6
 
 /*function smallestTwoNumbers(input) {
