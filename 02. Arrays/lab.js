@@ -52,3 +52,26 @@ evenPossitionElements([1,2,3,4])*/
 
 negativeOrPossitiveNumbers(['asdsad',2,'3',-1,-0])*/
 //-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 4
+
+/*function lastKNumberSequence(n,k) {
+    let arr = [1];
+    for (let i = 0; i < n-1; i++) {
+        let cur = 0;
+        for (let j = i; j > i-k ; j--) {
+            if(arr[j]=== undefined){
+                continue;
+            } else {
+                cur += arr[j];
+            }
+            
+        }
+        arr.push(cur)
+    }
+    console.log(arr);
+    
+}
+
+lastKNumberSequence(6,3)*/
+//-------------------------------------------------------------------------------------------------------------------------
