@@ -23,3 +23,32 @@ sumFirstAndLast(['40'])*/
 
 evenPossitionElements([1,2,3,4])*/
 //-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 3
+
+/*function negativeOrPossitiveNumbers(input) {
+    let negative = input.filter(a => a<0).sort((a,b) => b-a);
+    let positive = input.filter(a => a>0).sort((a,b) => a-b);
+    let nulls = input.filter(a => a==0);
+    console.log(negative.concat(positive,nulls).join('\n'));
+
+    // let negative = [];
+    // let positive = [];
+    // let nulls = [];
+    // for (const num of input) {
+    //     if(num<0){
+    //         negative.push(num)
+    //     } else if(num>0) {
+    //         positive.push(num)
+    //     } else {
+    //         nulls.push(num)
+    //     }
+    // }
+    // positive.sort((a,b) => a-b);
+    // negative.sort((a,b) => b-a);
+    // console.log((negative.concat(positive,nulls)).join('\n'));
+    
+}
+
+negativeOrPossitiveNumbers(['asdsad',2,'3',-1,-0])*/
+//-------------------------------------------------------------------------------------------------------------------------
