@@ -100,3 +100,24 @@ processOddNumbers([3, 0, 10, 4, 7, 3])*/
 }
 
 smallestTwoNumbers([3, 0, 10, 4, 7, 3])*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 7 
+
+/*function biggestElement(input) {
+    let biggest = Number.MIN_SAFE_INTEGER;
+
+    for(let i = 0; i < input.length;i++){
+        for (let j = 0; j < input[i].length; j++) {
+            let cur = input[i][j];
+            if(cur>=biggest){
+                biggest = cur
+            }
+        }
+    }
+    console.log(biggest);
+}
+
+biggestElement([[20, 50, 10],
+    [8, 33, 145]])*/
+    //-------------------------------------------------------------------------------------------------------------------------
