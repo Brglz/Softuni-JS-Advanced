@@ -75,3 +75,12 @@ negativeOrPossitiveNumbers(['asdsad',2,'3',-1,-0])*/
 
 lastKNumberSequence(6,3)*/
 //-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 6
+
+/*function smallestTwoNumbers(input) {
+   let result = [...new Set(input)].sort((a,b) => a-b).slice(0,2);
+   console.log(result.join('\n'));   
+}
+
+smallestTwoNumbers([3, 0, 10, 4, 7, 3])*/
