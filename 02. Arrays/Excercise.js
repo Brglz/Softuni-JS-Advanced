@@ -29,3 +29,70 @@ nThElementFromArray(['1',
 '5', 
 '6'])*/
 //-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 3
+
+/*function addAndRemoveElement(input) {
+    let n = 1;
+    let arr = [];
+    input.forEach(element => {
+        element === 'add' ? arr.push(n) : arr.pop();
+        n++;
+    })    
+    if(arr.length>0){
+        console.log(arr.join('\n'));  
+    } else {
+        console.log('Empty');  
+    }
+}
+
+addAndRemoveElement(['add', 
+'add', 
+'add', 
+'add',
+'remove'])*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 4
+
+/*function rotateArray(input) {
+    let rotateTimes = +input.pop()%input.length;
+    for(let i = 1; i <= rotateTimes;i++) {
+        let rotating = input.pop();
+        input.unshift(rotating);
+    };
+    console.log(input.join(' ')); 
+};
+
+rotateArray(['Banana', 
+'Orange', 
+'Coconut', 
+'Apple', 
+'15'])*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 5
+
+function subsequenceFromArray(input) {
+    let asd = input[0];
+    let result = [];
+
+    input.map(x => {
+        if(x >= asd){
+            result.push(x);
+            asd = x;
+        }
+    })
+    console.log(result.join('\n'));
+}
+
+subsequenceFromArray([1, 
+    3, 
+    8, 
+    4, 
+    10, 
+    12, 
+    3, 
+    2, 
+    24]
+    )
