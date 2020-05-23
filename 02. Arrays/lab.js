@@ -120,30 +120,72 @@ smallestTwoNumbers([3, 0, 10, 4, 7, 3])*/
 
 biggestElement([[20, 50, 10],
     [8, 33, 145]])*/
-    //-------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------
 
-    //EXCERCISE 8
+//EXCERCISE 8
 
-    /*function diagonalSums(input) {
-        let left = 0;
-        let right = 0;
+/*function diagonalSums(input) {
+    let left = 0;
+    let right = 0;
 
-        for (let i = 0; i < input.length; i++) {
-            let asd = input[i][i]
-            left += asd;
-        }
-        let counter = input.length-1;
-        for (let i = 0; i < input.length; i++) {
-            let asd = input[i][counter];
-            right += asd;
-            counter--;   
-        }
-        console.log(left,right); 
+    for (let i = 0; i < input.length; i++) {
+        let asd = input[i][i]
+        left += asd;
     }
+    let counter = input.length-1;
+    for (let i = 0; i < input.length; i++) {
+        let asd = input[i][counter];
+        right += asd;
+        counter--;   
+    }
+    console.log(left,right); 
+}
 
-    diagonalSums([[20, 40],
-        [10, 60]]
-       );*/
-       //-------------------------------------------------------------------------------------------------------------------------
+diagonalSums([[20, 40],
+    [10, 60]]
+   );*/
+//-------------------------------------------------------------------------------------------------------------------------
 
-       //EXCERCISE 9
+//EXCERCISE 9
+
+/*function equalNeighbors(input) {
+    let equal = 0;
+    for (let i = 0; i < input.length; i++) {
+
+        for (let j = 0; j < input[i].length - 1; j++) {
+            const curr = input[i][j];
+            const next = input[i][j + 1];
+            let currDown;
+            let lastDown;
+            if(i!==input.length-1){
+                currDown = input[i + 1][j];
+                lastDown = input[i + 1][input[i + 1].length - 1]
+            } else {
+                currDown = false;
+                lastDown = false
+            }
+            if (curr === next) {
+                equal++
+            } else if (curr === currDown) {
+                equal++
+            } else if (j===input[i].length-2) {
+                if (next === lastDown) {
+                    equal++
+                }
+            }
+
+        };
+    };
+    console.log(equal);
+
+};
+
+equalNeighbors([['2', '2', '4', '7', '0'],
+                ['4', '0', '5', '3', '4'],
+                ['2', '3', '5', '4', '2'],
+                ['9', '8', '7', '5', '4']]
+)
+equalNeighbors([['2', '2', '5', '7', '4'],
+                ['4', '0', '5', '3', '4'],
+                ['2', '5', '5', '4', '2']])*/
+//-------------------------------------------------------------------------------------------------------------------------
