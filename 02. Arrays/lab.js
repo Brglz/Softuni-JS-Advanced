@@ -121,3 +121,29 @@ smallestTwoNumbers([3, 0, 10, 4, 7, 3])*/
 biggestElement([[20, 50, 10],
     [8, 33, 145]])*/
     //-------------------------------------------------------------------------------------------------------------------------
+
+    //EXCERCISE 8
+
+    /*function diagonalSums(input) {
+        let left = 0;
+        let right = 0;
+
+        for (let i = 0; i < input.length; i++) {
+            let asd = input[i][i]
+            left += asd;
+        }
+        let counter = input.length-1;
+        for (let i = 0; i < input.length; i++) {
+            let asd = input[i][counter];
+            right += asd;
+            counter--;   
+        }
+        console.log(left,right); 
+    }
+
+    diagonalSums([[20, 40],
+        [10, 60]]
+       );*/
+       //-------------------------------------------------------------------------------------------------------------------------
+
+       //EXCERCISE 9
