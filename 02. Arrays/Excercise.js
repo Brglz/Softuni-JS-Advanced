@@ -73,7 +73,7 @@ rotateArray(['Banana',
 
 //EXCERCISE 5
 
-function subsequenceFromArray(input) {
+/*function subsequenceFromArray(input) {
     let asd = input[0];
     let result = [];
 
@@ -94,5 +94,33 @@ subsequenceFromArray([1,
     12, 
     3, 
     2, 
-    24]
-    )
+    24])*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 6
+
+/*function sortArr(input) {
+    let arr = input.slice();
+    let result = arr.sort(sorting);
+
+    function sorting(a, b) {
+        let first = a.length;
+        let seccond = b.length;
+        let strFirst = a.toUpperCase();
+        let strSeccond = b.toUpperCase();
+
+        if (first > seccond) return 1; //if the length of the first word is longer than the seccond move it up
+        if (first < seccond) return -1; // if the length of the first word is not longer than the seccond move it down
+
+        if (strFirst > strSeccond) return 1; // if the first letter of the first word is in front of the first letter of the seccond word move it up
+        if (strFirst < strSeccond) return -1; // if the first letter of the first word is in front of the first letter of the seccond word move it down
+    }
+    console.log(result.join('\n'));
+
+}
+
+sortArr(['test',
+    'Deny',
+    'omen',
+    'Default'])*/
+//-------------------------------------------------------------------------------------------------------------------------
