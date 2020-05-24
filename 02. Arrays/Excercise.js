@@ -124,3 +124,41 @@ sortArr(['test',
     'omen',
     'Default'])*/
 //-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 7
+
+/*function magicMatrix(input) {
+    let magical = [];
+    let lastSumRow = 0;
+    let lastSumCol = 0;
+    for (let i = 0; i < input.length; i++) {
+        let curSumRow = 0;
+        let curSumCol = 0;
+        for (let j = 0; j < input[i].length; j++) {
+            curSumRow += input[i][j];
+            curSumCol += input[j][i]
+        }
+        if (i != 0) {
+            if (curSumRow === lastSumRow) {
+                magical.push(0);
+            } else {
+                magical.push(1)
+            }
+            if(curSumCol === lastSumCol){
+                magical.push(0);
+            } else {
+                magical.push(1)
+            }
+        }
+        lastSumRow = curSumRow;
+        curSumRow = 0;
+        lastSumCol = curSumCol;
+        curSumCol = 0;
+    }
+    magical.reduce((a,b) => a+b) === 0 ? console.log('true') : console.log('false');
+}
+
+magicMatrix([[1, 0, 0],
+    [0, 0, 1],
+    [0, 1, 0]])*/
+    //-------------------------------------------------------------------------------------------------------------------------
