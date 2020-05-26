@@ -116,7 +116,8 @@ subsequenceFromArray([1,
         if (strFirst < strSeccond) return -1; // if the first letter of the first word is in front of the first letter of the seccond word move it down
     }
     console.log(result.join('\n'));
-
+    // Different solution 
+    return input.sort((a,b) => a.length - b.length || a.localeCompare(b)).join('\n')
 }
 
 sortArr(['test',
@@ -161,4 +162,93 @@ sortArr(['test',
 magicMatrix([[1, 0, 0],
     [0, 0, 1],
     [0, 1, 0]])*/
-    //-------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 8
+
+function ticTacToe(input) {
+    let arr = [[false, false, false],
+    [false, false, false],
+    [false, false, false]];
+
+    let player = 'X';
+
+    for (let line of input) {
+        let thereIsFalse = false;
+        // 1. read the input
+        let [currRow, currCol] = line.split(' ').map(Number);
+        // 2. check if the table is full
+        for (let row = 0; row < arr.length; row++) {
+            if (arr[row].includes(false)) {
+                thereIsFalse = true;
+            }
+        }
+        // 3. if its full end the game and print 'The game ended! Nobody wins :('
+        if (!thereIsFalse) {
+            console.log('The game ended! Nobody wins :(');
+            endGame();
+            return;
+        }
+        // 4. check if the place on the table is already taken and place it or if it is taken print a message
+        if (arr[currRow][currCol] !== false) {
+            console.log('This place is already taken. Please choose another!');
+            continue;
+        }
+        arr[currRow][currCol] = player;
+        // 5. check horizontaly for winners
+        for (let i = 0; i < 3; i++) {
+            if (arr[i][0] === player && arr[i][1] === player && arr[i][2] === player) {
+                console.log(`Player ${player} wins!`);
+                endGame();
+                return;
+            }
+        }
+        // 6. check verticaly for winners
+        for (let i = 0; i < 3; i++) {
+            if (arr[0][i] === player && arr[1][i] === player && arr[2][i] === player) {
+                console.log(`Player ${player} wins!`);
+                endGame()
+                return
+            }
+        }
+        // 7. check left to right diagonal for winners
+        for(let i = 0; i<3;i++){
+            if(arr[0][0]===player && arr[1][1]===player && arr[2][2]===player){
+                console.log(`Player ${player} wins!`);
+                endGame();
+                return
+            }
+        }
+        // 8. check right to left diagonal for winners
+        for(let i =0; i<3;i++){
+            if(arr[0][2]===player && arr[1][1]===player && arr[2][0] === player){
+                console.log(`Player ${player} wins!`);
+                endGame()
+                return
+            }
+        }
+        // 9. change players
+        player = player === "X" ? "O" : "X";
+    }
+
+    // 10. print if there is a winner
+    function endGame() {
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i].join('\t'));
+        }
+    }
+    
+
+}
+
+ticTacToe(["0 1",
+    "0 0",
+    "0 2",
+    "2 0",
+    "1 0",
+    "1 1",
+    "1 2",
+    "2 2",
+    "2 1",
+    "0 0"]
+)
