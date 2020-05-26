@@ -166,7 +166,7 @@ magicMatrix([[1, 0, 0],
 
 //EXCERCISE 8
 
-function ticTacToe(input) {
+/*function ticTacToe(input) {
     let arr = [[false, false, false],
     [false, false, false],
     [false, false, false]];
@@ -251,4 +251,5 @@ ticTacToe(["0 1",
     "2 2",
     "2 1",
     "0 0"]
-)
+)*/
+//-------------------------------------------------------------------------------------------------------------------------
