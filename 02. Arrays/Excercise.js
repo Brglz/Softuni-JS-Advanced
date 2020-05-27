@@ -253,3 +253,53 @@ ticTacToe(["0 1",
     "0 0"]
 )*/
 //-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 9
+
+function diagonalAtack(input) {
+    // 1.read the input 
+        // transform it to array matrix
+        // add boolean for verifying if sums are equal
+    
+    let matrix = []
+    input.forEach(element => {
+        let asd = element.split(' ').map(Number)
+        matrix.push(asd)
+    });
+    
+    let isEqualDiagonals = false;
+
+    let leftDiagonal = 0;
+    let rightDiagonal = 0;
+    
+    // 2. sum both diagonals
+        // for loop that sums the 2 diagonals
+
+    for (let i = 0; i < matrix.length; i++) {
+        leftDiagonal+=matrix[i][i];
+        let num = (+matrix.length-1)-i
+        rightDiagonal+=matrix[i][num];
+    }    
+    
+    // 3. check if sums are equal
+        //change the boolean
+    isEqualDiagonals = leftDiagonal===rightDiagonal;
+    console.log(leftDiagonal, rightDiagonal, isEqualDiagonals);
+    
+    // 4. transform the matrix with the sum of the diagonals
+
+    // 5. print 
+        console.log(matrix);
+        
+}
+
+diagonalAtack([ '5 3 12 3 1',
+                '11 4 23 2 5',
+                '101 12 3 21 10',
+                '1 4 5 2 2',
+                '5 22 33 11 1']
+)
+diagonalAtack(['1 1 1',
+'1 1 1',
+'1 1 0']
+);
