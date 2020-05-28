@@ -318,7 +318,7 @@ diagonalAtack(['1 1 1',
 
 //EXCERCISE 10
 
-function orbit(params) {
+/*function orbit(params) {
     let width = params.shift();
     let height = params.shift();
     let r = params.shift();
@@ -339,7 +339,7 @@ function orbit(params) {
     //2. fill it
     for (let row = 0; row < matrix.length; row++) {
         for (let col = 0; col < matrix[row].length; col++) {
-            matrix[row][col] = Math.max(Math.abs(r - row),Math.abs(c - col)) + 1
+            matrix[row][col] = Math.max(Math.abs(r - row),Math.abs(c - col)) + 1;
             
         }
         
@@ -347,15 +347,18 @@ function orbit(params) {
 
 
     //3. print it
-    console.log(matrix);
+    for(let el of matrix){
+        console.log(el.join(' '))
+    };
 
 }
 
 orbit([4, 4, 0, 0])
-orbit([5, 5, 2, 2])
+orbit([5, 5, 2, 2])*/
 //output
 /*  1 2 3 4
     2 2 3 4
     3 3 3 4
     4 4 4 4
 */
+//-------------------------------------------------------------------------------------------------------------------------
