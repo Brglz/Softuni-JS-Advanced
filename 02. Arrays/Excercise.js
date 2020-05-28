@@ -321,11 +321,41 @@ diagonalAtack(['1 1 1',
 function orbit(params) {
     let width = params.shift();
     let height = params.shift();
-    let x = params.shift();
-    let y = params.shift();
+    let r = params.shift();
+    let c = params.shift();
 
-    console.log(width,height,x,y);
+    //1. make the matrix
+    let matrix = [];
+    for (let row = 0; row < width; row++) {
+        let asd = '1'.repeat(height)
+        let cols = new Array(asd)
+        matrix.push(cols)
+    };
+
+    for (let row = 0; row < matrix.length; row++) {
+        matrix[row] = matrix[row][0].split('').map(Number);        
+    }
     
+    //2. fill it
+    for (let row = 0; row < matrix.length; row++) {
+        for (let col = 0; col < matrix[row].length; col++) {
+            matrix[row][col] = Math.max(Math.abs(r - row),Math.abs(c - col)) + 1
+            
+        }
+        
+    }
+
+
+    //3. print it
+    console.log(matrix);
+
 }
 
 orbit([4, 4, 0, 0])
+orbit([5, 5, 2, 2])
+//output
+/*  1 2 3 4
+    2 2 3 4
+    3 3 3 4
+    4 4 4 4
+*/
