@@ -256,50 +256,76 @@ ticTacToe(["0 1",
 
 //EXCERCISE 9
 
-function diagonalAtack(input) {
+/*function diagonalAtack(input) {
     // 1.read the input 
-        // transform it to array matrix
-        // add boolean for verifying if sums are equal
-    
+    // transform it to array matrix
+    // add boolean for verifying if sums are equal
     let matrix = []
     input.forEach(element => {
         let asd = element.split(' ').map(Number)
         matrix.push(asd)
     });
-    
-    let isEqualDiagonals = false;
 
+    let isEqualDiagonals = false;
     let leftDiagonal = 0;
     let rightDiagonal = 0;
-    
-    // 2. sum both diagonals
-        // for loop that sums the 2 diagonals
+    let nums = [];
 
+    // 2. sum both diagonals
+    // for loop that sums the 2 diagonals
     for (let i = 0; i < matrix.length; i++) {
-        leftDiagonal+=matrix[i][i];
-        let num = (+matrix.length-1)-i
-        rightDiagonal+=matrix[i][num];
-    }    
-    
+        leftDiagonal += matrix[i][i];
+        nums.push(matrix[i][i])
+        rightDiagonal += matrix[i][(+matrix.length - 1) - i];
+    }
     // 3. check if sums are equal
-        //change the boolean
-    isEqualDiagonals = leftDiagonal===rightDiagonal;
-    console.log(leftDiagonal, rightDiagonal, isEqualDiagonals);
-    
+    //change the boolean
+    isEqualDiagonals = leftDiagonal === rightDiagonal;
+
     // 4. transform the matrix with the sum of the diagonals
+    if (isEqualDiagonals) {
+        for (let row = 0; row < matrix.length; row++) {
+            for (let col = 0; col < matrix[row].length; col++) {
+                if (row !== col) {
+                    matrix[row][col] = leftDiagonal;
+                }
+            }
+        }
+        matrix.reverse()
+        for (let row = 0; row < matrix.length; row++) {
+            matrix[row][row] = nums[row];
+            
+        }
+    }
 
     // 5. print 
-        console.log(matrix);
-        
+    for (const element of matrix) {
+        console.log(element.join(' '));   
+    }
 }
 
-diagonalAtack([ '5 3 12 3 1',
-                '11 4 23 2 5',
-                '101 12 3 21 10',
-                '1 4 5 2 2',
-                '5 22 33 11 1']
-)
+// diagonalAtack(['5 3 12 3 1',
+//     '11 4 23 2 5',
+//     '101 12 3 21 10',
+//     '1 4 5 2 2',
+//     '5 22 33 11 1']
+// )
 diagonalAtack(['1 1 1',
-'1 1 1',
-'1 1 0']
-);
+    '1 1 1',
+    '1 1 0']
+);*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 10
+
+function orbit(params) {
+    let width = params.shift();
+    let height = params.shift();
+    let x = params.shift();
+    let y = params.shift();
+
+    console.log(width,height,x,y);
+    
+}
+
+orbit([4, 4, 0, 0])
