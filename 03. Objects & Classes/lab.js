@@ -96,7 +96,7 @@ populationInTowns(['Sofia <-> 1200000',
 
 //EXCERCISE 4
 
-function JSON_TO_HTML(jsonString) {
+/*function JSON_TO_HTML(jsonString) {
   let result = '<table>'
   const arr = JSON.parse(jsonString);
   const titles = Array.from(new Set(arr.map(items => Object.keys(items)).flat()))
@@ -115,4 +115,116 @@ function JSON_TO_HTML(jsonString) {
   return result + '</table>'
 }
 
-console.log(JSON_TO_HTML(['[{"Name":"Tomatoes & Chips","Price":2.35},{"Name":"J&B Chocolate","Price":0.96}]']))
+console.log(JSON_TO_HTML(['[{"Name":"Tomatoes & Chips","Price":2.35},{"Name":"J&B Chocolate","Price":0.96}]']))*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 5
+
+/*function lowestPriceCity(input) {
+  let obj = {}
+  let products = []
+  for (const line of input) {
+    let [city, product, price] = line.split(' | ')
+    price = +price;
+    if (obj[city] === undefined) {
+      obj[city] = { [product]: price }
+    } else {
+      obj[city][product] = price;
+    }
+    products.push(product)
+  }
+
+  products = Array.from(new Set(products));
+  let productsObj = {}
+  for (const el of products) {
+    productsObj[el] = [Number.MAX_SAFE_INTEGER, ''];
+
+  }
+
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const element = obj[key];
+
+      for (const product in productsObj) {
+        if (productsObj.hasOwnProperty(product)) {
+                    
+          if (element[product] !== undefined) {
+            if (element[product] < productsObj[product][0]) {
+              productsObj[product][0] = element[product];
+              productsObj[product][1] = key;
+
+            }
+          }
+        }
+      }
+    }
+
+  }
+  for (const product in productsObj) {
+    console.log(`${product} -> ${productsObj[product][0]} (${productsObj[product][1]})`)
+  }
+
+}
+
+lowestPriceCity(['Sample Town | Sample Product | 1000',
+  'Sample Town | Orange | 2',
+  'Sample Town | Peach | 1',
+  'Sofia | Orange | 3',
+  'Sofia | Peach | 2',
+  'New York | Sample Product | 1000.1',
+  'New York | Burger | 10']
+)*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 6
+
+/*function person() {
+  class Person {
+    constructor(firstName, lastName, age, email) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+      this.email = email;
+    }
+
+    toString() {
+    return `${this.firstName} ${this.lastName} (age: ${this.age}, email: ${this.email})`;
+  }
+}
+let person = new Person('Anna','Simpson',22,'anna@yahoo.com')
+console.log(person.toString());
+
+
+};
+
+person()*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 7
+
+/*function getPerson() {
+  class Person {
+    constructor(firstName, lastName, age, email) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+      this.email = email;
+    }
+    toString() {
+      return `${this.firstName} ${this.lastName} (age: ${this.age}, email: ${this.email})`;
+    }
+  }
+
+  let persons = [
+    new Person('Anna','Simpson',22,'anna@yahoo.com'),
+    new Person('SoftUni'),
+    new Person('Stephan','Johnson',25),
+    new Person('Gabriel','Peterson',24,'g.p@gmail.com')
+  ];
+  
+ return persons
+  
+}
+
+getPerson()*/
+//-------------------------------------------------------------------------------------------------------------------------
