@@ -65,32 +65,54 @@ sumByTown(['Sofia','20','Varna','3','Sofia','5','Varna','4'])*/
 
 //EXCERCISE 3
 
-function populationInTowns(input) {
+/*function populationInTowns(input) {
   let obj = {};
   for (const line of input) {
-    let [town,pop] = line.split(' <-> ');
-    if(obj[town]===undefined){
+    let [town, pop] = line.split(' <-> ');
+    if (obj[town] === undefined) {
       obj[town] = +pop;
     } else {
       obj[town] += +pop;
     }
-    
+
   }
-  
+
   for (const key in obj) {
     if (obj.hasOwnProperty(key)) {
       console.log(`${key} : ${obj[key]}`);
-      
-      
     }
   }
-  
+
 }
 
 populationInTowns(['Sofia <-> 1200000',
-'Montana <-> 20000',
-'New York <-> 10000000',
-'Washington <-> 2345000',
-'Las Vegas <-> 1000000',
-'Las Vegas <-> 1000099']
-)
+  'Montana <-> 20000',
+  'New York <-> 10000000',
+  'Washington <-> 2345000',
+  'Las Vegas <-> 1000000',
+  'Las Vegas <-> 1000099']
+)*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 4
+
+function JSON_TO_HTML(jsonString) {
+  let result = '<table>'
+  const arr = JSON.parse(jsonString);
+  const titles = Array.from(new Set(arr.map(items => Object.keys(items)).flat()))
+  result += '<tr><th>' + titles.join('</th><th>') + '</th></tr>';
+
+  result = arr.reduce((acc, currItem) => {
+    let innerResult = titles.reduce((titleAcc, currTitle) => {
+      const value = currItem[currTitle]
+      if (value === undefined) { return titleAcc }
+      return titleAcc + '<td>' + value + '</td>';
+    }, '')
+    if (innerResult === "") { return acc }
+    return acc + '<tr>' + innerResult + '</tr>'
+  }, result)
+
+  return result + '</table>'
+}
+
+console.log(JSON_TO_HTML(['[{"Name":"Tomatoes & Chips","Price":2.35},{"Name":"J&B Chocolate","Price":0.96}]']))
