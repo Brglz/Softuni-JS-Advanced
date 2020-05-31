@@ -1,6 +1,6 @@
 //EXCERCISE 1
 
-/*function townsToJSON(input) {
+function townsToJSON(input) {
   let asd = input.shift();
   function wp(obj) {
     obj = obj.split('').filter(x => x !== '|');
@@ -39,7 +39,7 @@ townsToJSON(['| Town York | Latitude | Longitude |',
 
 townsToJSON(['| Town | Latitude | Longitude |',
   '| Delhi |  28.38 | 77.12 |',
-  '| Is it a real town? | 71.42 | -13.91 |'])*/
+  '| Is it a real town? | 71.42 | -13.91 |'])
 //-------------------------------------------------------------------------------------------------------------------------
 
 //EXCERCISE 2
