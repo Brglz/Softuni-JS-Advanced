@@ -84,7 +84,7 @@ cappyJuice(['Orange => 2000',
 
 //EXCERCISE 4
 
-function storeCataloge(input) {
+/*function storeCataloge(input) {
     const catalog = {};
     
     for (const line of input) {
@@ -93,7 +93,6 @@ function storeCataloge(input) {
         if(catalog.hasOwnProperty(letter) === false) {
             catalog[letter] = {};
         }
-
         catalog[letter][product] = price;
     }
 
@@ -102,23 +101,9 @@ function storeCataloge(input) {
         console.log(key);
         const sortedProducts = Object.keys(catalog[key]).sort((a,b) => a.localeCompare(b))
         for (const product of sortedProducts) {
-            console.log(`  ${product} : ${catalog[key][product]}`);
-            
-        }
-        
-        
+            console.log(`  ${product}: ${catalog[key][product]}`);   
+        }   
     }
-
-    // read input
-    // get name and price of the element
-    // ako ne sushtestvuva bukvata suzdavame q (prazen obekt)
-    // dostupvame stoinosta zad bukvata
-    // zapazvame obrabotenata stoinost v obekta
-
-    // sortirame kataloga po nachalna bukva
-    // otpechatvame bukvata
-    // sortirame obekta zad bukvata
-    // otpechatvame obekta
 }
 
 storeCataloge(['Appricot : 20.4',
@@ -129,4 +114,61 @@ storeCataloge(['Appricot : 20.4',
 'Apple : 1.25',
 'Anti-Bug Spray : 15',
 'T-Shirt : 10']
-)
+)*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 5
+
+//-------------------------------------------------------------------------------------------------------------------------
+//EXCERCISE 6
+
+/*function systemComponents(input) {
+    const catalog = {}
+    for (const line of input) {
+        let [system,component,sub] = line.split(' | ');
+        if(catalog.hasOwnProperty(system) === false) {
+            catalog[system] = {}
+        } 
+        if(catalog[system].hasOwnProperty(component)===false){
+            catalog[system][component] = []
+        }
+
+        catalog[system][component].push(sub);
+    }
+
+    Object.entries(catalog).sort((a,b) => {
+        return Object.keys(b[1]).length - Object.keys(a[1]).length || a[0].localeCompare(b[0]);
+    }).forEach(([system,component]) => {
+        console.log(system);
+        Object.entries(component)
+            .sort((a,b) => b[1].length - a[1].length)
+            .forEach(([name,sub]) => {
+                console.log('|||' + name);
+                sub.forEach(s => {
+                    console.log('||||||' + s);
+                    
+                })
+                
+            })
+        
+    })
+    
+}
+
+systemComponents(['SULS | Main Site | Home Page',
+'SULS | Main Site | Login Page',
+'SULS | Main Site | Register Page',
+'SULS | Judge Site | Login Page',
+'SULS | Judge Site | Submittion Page',
+'Lambda | CoreA | A23',
+'SULS | Digital Site | Login Page',
+'Lambda | CoreB | B24',
+'Lambda | CoreA | A24',
+'Lambda | CoreA | A25',
+'Lambda | CoreC | C4',
+'Indice | Session | Default Storage',
+'Indice | Session | Default Security']
+)*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 7
