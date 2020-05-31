@@ -27,31 +27,50 @@
     </div>
     <script>
         // VERY IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        function fromJSONToHTMLTable(jsonString) {
+        function fromJSONToHTMLTable(input) {
 
-            let result = '<table>'
-            const arr = JSON.parse(jsonString);
-            const titles = Array.from(new Set(arr.map(items => Object.keys(items)).flat()))
-            result += '<tr><th>' + titles.join('</th><th>') + '</th></tr>';
+            // HARD WAY
 
-            result = arr.reduce((acc, currItem) => {
-                let innerResult = titles.reduce((titleAcc, currTitle) => {
-                    const value = currItem[currTitle]
-                    if (value === undefined) { return titleAcc }
-                    return titleAcc + '<td>' + value + '</td>';
-                }, '')
-                if (innerResult === "") { return acc }
-                return acc + '<tr>' + innerResult + '</tr>'
-            }, result)
+            // let result = '<table>'
+            // const arr = JSON.parse(jsonString);
+            // const titles = Array.from(new Set(arr.map(items => Object.keys(items)).flat()))
+            // result += '<tr><th>' + titles.join('</th><th>') + '</th></tr>';
 
-            return result + '</table>'
+            // result = arr.reduce((acc, currItem) => {
+            //     let innerResult = titles.reduce((titleAcc, currTitle) => {
+            //         const value = currItem[currTitle]
+            //         if (value === undefined) { return titleAcc }
+            //         return titleAcc + '<td>' + value + '</td>';
+            //     }, '')
+            //     if (innerResult === "") { return acc }
+            //     return acc + '<tr>' + innerResult + '</tr>'
+            // }, result)
+
+            // return result + '</table>'
+            
+            // EASY WAY !!!!!!!!!
+            // let result = '<table>';
+
+            // for (const line of input) {
+            //     let obj = JSON.parse(line);
+
+            //     let tempString = '\n\t<tr>';
+            //     let asd = `\n\t\t<td>${obj.name}</td>\n\t\t<td>${obj.position}</td>\n\t\t<td>${obj.salary}</td>`;
+            //     result += tempString + asd + '\n\t</tr'
+
+            // }
+            // result += '\n</table>'
+            // return result
         }
 
-            
-        
+
+
         window.onload = function () {
             let container = document.getElementById('wrapper');
-            container.innerHTML = fromJSONToHTMLTable(['[{"Name":"Tomatoes & Chips","Price":2.35},{"Name":"J&B Chocolate","Price":0.96}]']);
+            container.innerHTML = fromJSONToHTMLTable(['{"name":"Pesho","position":"Promenliva","salary":100000}',
+'{"name":"Teo","position":"Lecturer","salary":1000}',
+'{"name":"Georgi","position":"Lecturer","salary":1000}']
+);
         };
     </script>
 </body>
