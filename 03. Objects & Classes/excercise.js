@@ -85,7 +85,40 @@ cappyJuice(['Orange => 2000',
 //EXCERCISE 4
 
 function storeCataloge(input) {
+    const catalog = {};
     
+    for (const line of input) {
+        let [product,price] = line.split(' : ');
+        const letter = product[0];
+        if(catalog.hasOwnProperty(letter) === false) {
+            catalog[letter] = {};
+        }
+
+        catalog[letter][product] = price;
+    }
+
+    const sortedKeys = Object.keys(catalog).sort((a,b) => a.localeCompare(b))
+    for (const key of sortedKeys) {
+        console.log(key);
+        const sortedProducts = Object.keys(catalog[key]).sort((a,b) => a.localeCompare(b))
+        for (const product of sortedProducts) {
+            console.log(`  ${product} : ${catalog[key][product]}`);
+            
+        }
+        
+        
+    }
+
+    // read input
+    // get name and price of the element
+    // ako ne sushtestvuva bukvata suzdavame q (prazen obekt)
+    // dostupvame stoinosta zad bukvata
+    // zapazvame obrabotenata stoinost v obekta
+
+    // sortirame kataloga po nachalna bukva
+    // otpechatvame bukvata
+    // sortirame obekta zad bukvata
+    // otpechatvame obekta
 }
 
 storeCataloge(['Appricot : 20.4',
