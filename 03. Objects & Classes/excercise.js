@@ -172,3 +172,43 @@ systemComponents(['SULS | Main Site | Home Page',
 //-------------------------------------------------------------------------------------------------------------------------
 
 //EXCERCISE 7
+
+function ticketSS(tickets,criteria) {
+    class Ticket {
+        constructor(descriptor){
+            const [destination,price,status] = descriptor.split('|')
+            this.destination = destination;
+            this.price = Number(price);
+            this.status = status;
+        }
+    }
+
+    // ONE WAY
+    // const comparator = {
+    //     destination: (a,b) => a.destination.localeCompare(b.destination),
+    //     price: (a,b) => a-b,
+    //     status: (a,b) => a.status.localeCompare(b.status),
+    // };
+
+    // return tickets.map(t=>new Ticket(t)).sort((comparator[criteria]));
+
+    // OTHER WAY
+
+    return tickets.map(t=>new Ticket(t)).sort(comparator);
+
+    function comparator(a,b) {
+        try {
+            return a[criteria].localeCompare(b[criteria]);
+        } catch(e) {
+            return a[criteria] - b[criteria]
+        }
+    }
+
+}
+
+console.log(ticketSS(['Philadelphia|94.20|available',
+'New York City|95.99|available',
+'New York City|95.99|sold',
+'Boston|126.20|departed'],
+'destination'
+))
