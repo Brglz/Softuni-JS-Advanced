@@ -117,7 +117,7 @@ storeCataloge(['Appricot : 20.4',
 
 //EXCERCISE 5
 
-function engineeringCompany(input) {
+/*function engineeringCompany(input) {
     let cars = {};
 
     for (const line of input) {
@@ -154,7 +154,7 @@ engineeringCompany(['Audi | Q7 | 1000',
 'Lada | Jigula | 1000000',
 'Citroen | C4 | 22',
 'Citroen | C5 | 10']
-)
+)*/
 
 //-------------------------------------------------------------------------------------------------------------------------
 //EXCERCISE 6
@@ -208,7 +208,29 @@ systemComponents(['SULS | Main Site | Home Page',
 )*/
 //-------------------------------------------------------------------------------------------------------------------------
 
-//EXCERCISE 7
+///EXCERCISE 7
+
+/*class Request {
+    constructor(method, uri, version, message) {
+        this.method = method;
+        this.uri = uri;
+        this.version = version;
+        this.message = message;
+        this.response = undefined;
+        this.fulfiled = false;
+    }
+
+    set ful(full) {
+        this.fulfiled = true;
+    }
+
+}
+
+let myData = new Request('GET', 'http://google.com', 'HTTP/1.1', '')
+console.log(myData);*/
+
+///-------------------------------------------------------------------------------------------------------------------------
+//EXCERCISE 8
 
 /*function ticketSS(tickets,criteria) {
     class Ticket {
@@ -250,3 +272,5 @@ console.log(ticketSS(['Philadelphia|94.20|available',
 'destination'
 ))*/
 //-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 9
