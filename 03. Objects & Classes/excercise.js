@@ -2,24 +2,22 @@
 
 /*function heroicInventory(input) {
     let fighters = [];
-    for (const line of input) {
-        let [name,lvl,weapons] = line.split(' / ');
-        console.log(name,lvl,weapons);
-        let tempObj = {}
-        if(){
-            tempObj[name] = name;
-            tempObj[lvl] = lvl;
-            tempObj[weapons] = weapons;
-            
-        }
-    }
-    
 
+    for (const line of input) {
+        let [name, lvl, weapons] = line.split(' / ');
+        weapons = weapons.split(', ')
+        let temp = {};
+        temp.name = name;
+        temp.level = Number(lvl);
+        temp.items = weapons;
+        fighters.push(temp);
+    }
+    return JSON.stringify(fighters);
 }
 
 heroicInventory(['Isacc / 25 / Apple, GravityGun',
-'Derek / 12 / BarrelVest, DestructionSword',
-'Hes / 1 / Desolator, Sentinel, Antara']
+    'Derek / 12 / BarrelVest, DestructionSword',
+    'Hes / 1 / Desolator, Sentinel, Antara']
 )*/
 //-------------------------------------------------------------------------------------------------------------------------
 
@@ -30,15 +28,15 @@ heroicInventory(['Isacc / 25 / Apple, GravityGun',
 
     for (const line of input) {
         let obj = JSON.parse(line);
-        
+
         let tempString = '\n\t<tr>';
         let asd = `\n\t\t<td>${obj.name}</td>\n\t\t<td>${obj.position}</td>\n\t\t<td>${obj.salary}</td>`;
         result += tempString + asd + '\n\t</tr>'
-        
+
     }
     result += '\n</table>'
     return result
-    
+
 }
 
 JSON_Table(['{"name":"Pesho","position":"Promenliva","salary":100000}',
@@ -60,7 +58,7 @@ JSON_Table(['{"name":"Pesho","position":"Promenliva","salary":100000}',
         } else {
             obj[name] += Number(quantity);
         }
-        
+
     }
     for (const key in obj) {
         if (obj.hasOwnProperty(key)) {
@@ -68,10 +66,10 @@ JSON_Table(['{"name":"Pesho","position":"Promenliva","salary":100000}',
             if(Math.floor(obj[key]/1000) > 0){
                 console.log(`${key} => ${Math.floor(obj[key]/1000)}`);
             }
-            
+
         }
     }
-    
+
 }
 
 cappyJuice(['Orange => 2000',
@@ -86,7 +84,7 @@ cappyJuice(['Orange => 2000',
 
 /*function storeCataloge(input) {
     const catalog = {};
-    
+
     for (const line of input) {
         let [product,price] = line.split(' : ');
         const letter = product[0];
@@ -101,8 +99,8 @@ cappyJuice(['Orange => 2000',
         console.log(key);
         const sortedProducts = Object.keys(catalog[key]).sort((a,b) => a.localeCompare(b))
         for (const product of sortedProducts) {
-            console.log(`  ${product}: ${catalog[key][product]}`);   
-        }   
+            console.log(`  ${product}: ${catalog[key][product]}`);
+        }
     }
 }
 
@@ -119,6 +117,45 @@ storeCataloge(['Appricot : 20.4',
 
 //EXCERCISE 5
 
+function engineeringCompany(input) {
+    let cars = {};
+
+    for (const line of input) {
+        let [brand,model,producedCars] = line.split(' | ');
+        if(cars.hasOwnProperty(brand)===false){
+            cars[brand] = {}
+        }
+        if(cars[brand].hasOwnProperty(model)===false){
+            cars[brand][model] = Number(producedCars);
+        } else {
+            cars[brand][model] += Number(producedCars)
+        }
+        
+        
+        
+    }
+    for (const car in cars) {
+        console.log(car);
+        for (const model in cars[car]) {
+            console.log(`###${model} -> ${cars[car][model]}`)
+        
+        }
+    }
+    
+}
+
+engineeringCompany(['Audi | Q7 | 1000',
+'Audi | Q6 | 100',
+'BMW | X5 | 1000',
+'BMW | X6 | 100',
+'Citroen | C4 | 123',
+'Volga | GAZ-24 | 1000000',
+'Lada | Niva | 1000000',
+'Lada | Jigula | 1000000',
+'Citroen | C4 | 22',
+'Citroen | C5 | 10']
+)
+
 //-------------------------------------------------------------------------------------------------------------------------
 //EXCERCISE 6
 
@@ -128,7 +165,7 @@ storeCataloge(['Appricot : 20.4',
         let [system,component,sub] = line.split(' | ');
         if(catalog.hasOwnProperty(system) === false) {
             catalog[system] = {}
-        } 
+        }
         if(catalog[system].hasOwnProperty(component)===false){
             catalog[system][component] = []
         }
@@ -146,13 +183,13 @@ storeCataloge(['Appricot : 20.4',
                 console.log('|||' + name);
                 sub.forEach(s => {
                     console.log('||||||' + s);
-                    
+
                 })
-                
+
             })
-        
+
     })
-    
+
 }
 
 systemComponents(['SULS | Main Site | Home Page',
@@ -173,7 +210,7 @@ systemComponents(['SULS | Main Site | Home Page',
 
 //EXCERCISE 7
 
-function ticketSS(tickets,criteria) {
+/*function ticketSS(tickets,criteria) {
     class Ticket {
         constructor(descriptor){
             const [destination,price,status] = descriptor.split('|')
@@ -211,4 +248,5 @@ console.log(ticketSS(['Philadelphia|94.20|available',
 'New York City|95.99|sold',
 'Boston|126.20|departed'],
 'destination'
-))
+))*/
+//-------------------------------------------------------------------------------------------------------------------------
