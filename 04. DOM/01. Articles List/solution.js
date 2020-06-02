@@ -22,4 +22,7 @@ function createArticle() {
 	articleHeading.innerText = titleInputValue;
 	articleParagraph.innerText = contentValue;
 
+	createTitleInput.value = '';
+	createContentTextArea.value = '';
+
 }
