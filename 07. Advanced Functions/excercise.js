@@ -39,10 +39,34 @@ solve({ name: 'bob'}, 3.333, 9.999)*/
 
 //EXCERCISE 3
 
-function personalBMI(params) {
-    
+function personalBMI(name1, age1, weight1, height1) {
+    const object = {
+        name: name1,
+        personalInfo: {
+            age: age1,
+            weight: weight1,
+            height: height1,
+        },
+    };
+
+    const bmi = Math.round(object.personalInfo.weight / Math.pow((object.personalInfo.height/100),2))
+    object.BMI = bmi    
+    if (object.BMI < 18.5) {
+        object.status = 'underweight'
+    } else if (object.BMI >= 18.5 && object.BMI < 25) {
+        object.status = 'normal'
+    } else if (object.BMI >= 25 && object.BMI < 30) {
+        object.status = 'overweight'
+    } else if (object.BMI > 30) {
+        object.status = 'obese'
+        object.recommendation = 'admission required'
+    }
+
+    return object
 }
 
+
+console.log(personalBMI('Honey Boo Boo', 23, 76, 175))
 
 //-------------------------------------------------------------------------------------------------------------------------
 
