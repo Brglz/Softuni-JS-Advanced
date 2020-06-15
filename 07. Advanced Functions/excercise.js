@@ -31,7 +31,7 @@ function solve() {
         counter[type]++;
     }
 
-    Object.entries(counter).sort((a,b) => a-b).forEach(a => console.log(a.join(' = ')));    
+    Object.entries(counter).sort((a,b) => b[1]-a[1]).forEach(a => console.log(a.join(' = ')));    
 }
 
-solve('cat', 42, function () { console.log('Hello world!'); })
+solve({ name: 'bob'}, 3.333, 9.999)
