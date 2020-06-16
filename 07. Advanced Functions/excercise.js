@@ -39,7 +39,7 @@ solve({ name: 'bob'}, 3.333, 9.999)*/
 
 //EXCERCISE 3
 
-function personalBMI(name1, age1, weight1, height1) {
+/*function personalBMI(name1, age1, weight1, height1) {
     const object = {
         name: name1,
         personalInfo: {
@@ -66,7 +66,7 @@ function personalBMI(name1, age1, weight1, height1) {
 }
 
 
-console.log(personalBMI('Honey Boo Boo', 23, 76, 175))
+console.log(personalBMI('Honey Boo Boo', 23, 50, 168))*/
 
 //-------------------------------------------------------------------------------------------------------------------------
 
@@ -135,3 +135,128 @@ console.log(solve.length([3, -4]))
 console.log(solve.dot([1, 0], [0, -1]))
 console.log(solve.cross([3, 7], [1, 0]))*/
 //-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 5
+
+/*function solution() {
+
+    const ingrediants = {
+        protein: 0,
+        carbohydrate: 0,
+        fat: 0,
+        flavour: 0,
+    };
+
+    const recipes = {
+        apple: {
+            carbohydrate: 1,
+            fat: 0,
+            flavour: 2,
+            protein: 0
+        }
+        ,
+
+        lemonade: {
+            carbohydrate: 10,
+            fat: 0,
+            flavour: 20,
+            protein: 0
+        }
+        , burger: {
+            carbohydrate: 5,
+            fat: 7,
+            flavour: 3,
+            protein: 0
+        }
+
+        , eggs: {
+            carbohydrate: 0,
+            fat: 1,
+            flavour: 1,
+            protein: 5
+        }
+        , turkey: {
+            carbohydrate: 10,
+            fat: 10,
+            flavour: 10,
+            protein: 10
+        }
+    }
+
+    function restock(food, quantity) {
+        quantity = Number(quantity);
+        ingrediants[food] += quantity;
+        return 'Success'
+    }
+
+    function prepare(food, quantity) {
+        const canMake = {
+            protein: recipes[food].protein*quantity,
+            carbohydrate: recipes[food].carbohydrate*quantity,
+            fat: recipes[food].fat*quantity,
+            flavour: recipes[food].flavour*quantity,
+        }
+        
+        for (const key in canMake) {
+            if(canMake[key]<=ingrediants[key]){
+                ingrediants[key] -= canMake[key]
+            } else {
+                return `Error: not enough ${key} in stock`
+            }
+            
+        }
+        return 'Success'
+
+    }
+
+    function report() {
+        return `protein=${ingrediants.protein} carbohydrate=${ingrediants.carbohydrate} fat=${ingrediants.fat} flavour=${ingrediants.flavour}`
+    }
+
+
+    function manager(str) {
+
+        const [fun, food, quantity] = str.split(' ');
+        if (fun === 'prepare') {
+            return prepare(food, quantity);
+        } else if (fun === 'restock') {
+            return restock(food, quantity);
+        } else {
+            return report()
+        }
+
+    }
+    return manager;
+
+}
+
+
+const asd = solution();
+
+console.log(asd('restock carbohydrate 10'));
+console.log(asd('restock flavour 10'));
+console.log(asd('prepare apple 1'));
+console.log(asd('restock fat 10'));
+console.log(asd('prepare burger 1'));
+console.log(asd('report'));
+
+// console.log(asd('prepare turkey 1'));
+// console.log(asd('restock protein 10'));
+// console.log(asd('prepare turkey 1'));
+// console.log(asd('restock carbohydrate 10'));
+// console.log(asd('prepare turkey 1'));
+// console.log(asd('restock fat 10'));
+// console.log(asd('prepare turkey 1'));
+// console.log(asd('restock flavour 10'));
+// console.log(asd('prepare turkey 1'));
+// console.log(asd('report'));*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 6
+
+
+
+
+
+
+
