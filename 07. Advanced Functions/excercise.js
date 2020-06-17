@@ -27,11 +27,11 @@ console.log(solve([14, 7, 17, 6, 8], 'desc'))*/
         console.log(`${type}: ${arg}`);
         if(counter[type]===undefined){
             counter[type] = 0;
-        } 
+        }
         counter[type]++;
     }
 
-    Object.entries(counter).sort((a,b) => b[1]-a[1]).forEach(a => console.log(a.join(' = ')));    
+    Object.entries(counter).sort((a,b) => b[1]-a[1]).forEach(a => console.log(a.join(' = ')));
 }
 
 solve({ name: 'bob'}, 3.333, 9.999)*/
@@ -50,7 +50,7 @@ solve({ name: 'bob'}, 3.333, 9.999)*/
     };
 
     const bmi = Math.round(object.personalInfo.weight / Math.pow((object.personalInfo.height/100),2))
-    object.BMI = bmi    
+    object.BMI = bmi
     if (object.BMI < 18.5) {
         object.status = 'underweight'
     } else if (object.BMI >= 18.5 && object.BMI < 25) {
@@ -153,29 +153,26 @@ console.log(solve.cross([3, 7], [1, 0]))*/
             fat: 0,
             flavour: 2,
             protein: 0
-        }
-        ,
-
+        },
         lemonade: {
             carbohydrate: 10,
             fat: 0,
             flavour: 20,
             protein: 0
-        }
-        , burger: {
+        },
+        burger: {
             carbohydrate: 5,
             fat: 7,
             flavour: 3,
             protein: 0
         }
-
         , eggs: {
             carbohydrate: 0,
             fat: 1,
             flavour: 1,
             protein: 5
-        }
-        , turkey: {
+        },
+        turkey: {
             carbohydrate: 10,
             fat: 10,
             flavour: 10,
@@ -196,14 +193,13 @@ console.log(solve.cross([3, 7], [1, 0]))*/
             fat: recipes[food].fat*quantity,
             flavour: recipes[food].flavour*quantity,
         }
-        
+
         for (const key in canMake) {
             if(canMake[key]<=ingrediants[key]){
                 ingrediants[key] -= canMake[key]
             } else {
                 return `Error: not enough ${key} in stock`
             }
-            
         }
         return 'Success'
 
@@ -224,7 +220,6 @@ console.log(solve.cross([3, 7], [1, 0]))*/
         } else {
             return report()
         }
-
     }
     return manager;
 
@@ -254,9 +249,18 @@ console.log(asd('report'));
 
 //EXCERCISE 6
 
+function add(x) {
+
+    function sum(a) {
+        x += a
+        return sum;
+    }
+    sum.toString = () => x
+    return sum
+}
 
 
 
-
+console.log(add(2)(2)(-7))
 
 
