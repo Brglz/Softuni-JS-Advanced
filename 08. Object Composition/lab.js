@@ -1,6 +1,6 @@
 //EXCERCISE 1
 
-function solution(data) {
+/*function solution(data) {
     const recPrototype = {
         area(){
             return this.height * this.width;
@@ -28,4 +28,28 @@ const data = [[10,5], [5,12]];
 const [rec1, rec2] = solution(data);
 console.log(rec1.area());
 console.log(rec2.area());
-console.log(rec1.compareTo(rec2));
+console.log(rec1.compareTo(rec2));*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 2
+
+/*function solve(commands) {
+    return commands.reduce(function(acc,currComand) {
+        const [command, ...words] = currComand.split(' ');
+        const word = words.join(' ');
+        if(command === 'add'){
+            return acc.concat(word)
+        } else if(command === 'remove') {
+            return acc.filter(i => i!==word)
+        } else {
+            console.log(acc);
+            return acc;
+        }
+
+    }, []).join(',')
+}
+
+solve(['add JSFundamentals', 'print', 'add JSAdvanced', 'print','add JSApplications','print'])*/
+//-------------------------------------------------------------------------------------------------------------------------
+
+//EXCERCISE 3
