@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bug Tracker</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="titlebar">Bug tracker 
+            <button onclick="change()">Change</button> 
+            <button onclick="removeIt()">DELETE</button>
+            <button onclick="resort('ID')">Sort by id</button>
+            <button onclick="resort('author')">Sort by author</button>
+            <button onclick="resort('severity')">Sort by severity</button>
+            <button onclick="add()">Add</button>
+        </div>
+        <div id="content">
+            <div class="report">
+                <div class="body">
+                    <p>Description</p>
+                </div>
+                <div class="title">
+                    <span class="author">Submitted by: Author</span>
+                    <span class="status">Open | 5</span>
+                </div>
+            </div>
+            <div class="report">
+                <div class="body">
+                    <p>Description</p>
+                </div>
+                <div class="title">
+                    <span class="author">Submitted by: Author</span>
+                    <span class="status">Open | 5</span>
+                </div>
+            </div>
+            <div class="report">
+                <div class="body">
+                    <p>Description</p>
+                </div>
+                <div class="title">
+                    <span class="author">Submitted by: Author</span>
+                    <span class="status">Open | 5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+    <script>
+        function change() {
+            bugTracker.setStatus(0, 'In progress');
+        }
+        function removeIt() {
+            bugTracker.remove(0)
+        }
+        function resort(method) {
+            bugTracker.sort(method)
+        }
+
+        function add() {
+            bugTracker.report('New', 'Some title', true, 7);
+
+        }
+        const bugTracker = solve();
+        bugTracker.output('#content')
+        bugTracker.report('Peter', 'Some title', true, 1);
+        bugTracker.report('gosho', 'Some title', true, 10);
+        bugTracker.report('misho', 'Some title', true, 2);
+        bugTracker.report('tisho', 'Some title', true, 3);
+    </script>
+</body>
+
+</html>
